@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        margin: 0;
+        background: url('https://img.magnific.com/free-photo/3d-render-abstract-particle-design-background-network-communications_1048-15282.jpg') no-repeat center fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial;
+    }
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+.container {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.nova-text {
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    text-shadow: 0 0 25px #00aaff; 
+    font-family: 'Arial Black';
+}
+
+.near{
+    position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 15px;
+   
+}
+.near img{
+  width: 60px;
+  height: 60px;
+}
+
+h2{
+    color: white;
+    font-weight: normal;
+    font-size: 24px;
+    margin-top: 10px;
+}
+input{
+    width: 70%; 
+    max-width: 600px;
+    padding: 15px 20px;
+    border-radius: 50px; 
+    border: none;
+    background: rgba(0, 102, 255, 0.5); 
+    color: white;
+    font-size: 18px;
+    outline: none;
+}
+input::placeholder{
+    color: white;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    background: rgba(0, 102, 255, 0.5); 
+    border-radius: 50px; 
+    padding: 3px 10px  3px 3px;
+    width: 70%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+.search-box input{
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+ 
+}
+.search-box input::placeholder{
+    color: white;
+    opacity: 0.5;
+    background-color: gray;
+}
+
+.search-box button{
+ padding: 5px 10px;
+ border: none;
+ background-color: rgba(255,255,255,0.2);
+ border-radius: 50px; 
+ color: white;
+ font-size: 20px;
+ cursor: pointer;
+}
+
+
+
+.sections{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 25px;
+    color: white;
+    font-size: 16px;
+
+}
+.sections div a{
+ text-decoration: none;
+ color: white;
+}
+.sections div a:hover{
+  color: #66ccff;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="near">
+        <img src="nova.jpg" alt="nova">
+        <div class="nova-text">NOVA</div>
+     </div>
+    <h2>The search engine for the next generation</h2>
+</div>
+ <div class="search-box">
+    <input type="text" id="searchInput" placeholder="search the world...">
+    <button type="button" id="searchBtn">🔎</button>
+ </div>
+<div class="sections">
+    <div><a href="#" id="link_all">🔎 All</a></div>
+    <div><a href="#" id="link_images">🖼️Images</a></div>
+    <div><a href="#" id="link_videos">📺 Videos</a></div>
+    <div><a href="#" id="link_news">📰 News</a></div>
+    <div><a href="#" id="link_maps">🗺️ Maps</a></div>
+    <div><a href="#">.. More</a></div>
+</div>
+<div id="suggestions" class="suggestions"></div>
+<script>
+    const input = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+    const suggestions = document.getElementById("suggestions");
+
+    function updateLinks() {
+        const query = input.value.trim();
+        const q = encodeURIComponent(query);
+
+        const allLink = "https://www.google.com/search?q=" + q;
+        const imagesLink = "https://www.google.com/search?q=" + q + "&tbm=isch";
+        const videosLink = "https://www.google.com/search?q=" + q + "&tbm=vid";
+        const newsLink = "https://www.google.com/search?q=" + q + "&tbm=nws";
+        const mapsLink = query ? "https://www.google.com/maps/search/" + q : "#";
+
+        document.getElementById('link_all').href = query ? allLink : '#';
+        document.getElementById('link_images').href = query ? imagesLink : '#';
+        document.getElementById('link_videos').href = query ? videosLink : '#';
+        document.getElementById('link_news').href = query ? newsLink : '#';
+        document.getElementById('link_maps').href = mapsLink;
+    }
+
+    input.addEventListener('input', updateLinks);
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            const query = input.value.trim();
+            if (query) {
+                window.location.href = document.getElementById('link_all').href;
+            }
+        }
+    });
+
+    searchBtn.addEventListener('click', () => {
+        const query = input.value.trim();
+        if (query) {
+            window.location.href = document.getElementById('link_all').href;
+        }
+    });
+
+    updateLinks();
+</script>
+</body>
+</html>
+
+
+

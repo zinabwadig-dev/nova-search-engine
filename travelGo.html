@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travelGo</title>
+</head>
+<body>
+    <header>
+      <nav id="nav">
+        <h2>Travel<span>Go</span></h2>
+          <ul>
+            <li><a href="#">Destination</a></li>
+             <li><a href="#">Trekking</a></li>
+              <li><a href="#">Adventure</a></li>
+               <li><a href="#">Tours</a></li>
+                <li><a href="#">Gallery</a></li>
+        </ul>
+        <div class="search">
+            🔎
+            <button><a href="#">Contact</a></button>
+        </div>
+      </nav>
+    </header>
+    <section class="sect">
+        <article class="card1">
+            <p class="explore">EXPLORE The WORLD </p>
+            <h1><span id="white">Discover Hidden</span> <br><span id="blue">Paradise</span></h1>
+            <p class="blanc">Experience breathtaking destinations,unforgettable journeys,<br>and premium travel experiences around the world.</p>
+            <div class="btns">
+                  <button class="btn1"><a href="/">start journey</a></button>
+                  <button class="btn2"><a href="/">watch Video</a></button>
+            </div>
+        </article>
+          <article class="card2">
+            <div class="nav">
+               <ul>
+                 <li><a href="/">Destination</a></li>
+                 <li><a href="/">check In</a></li>
+                 <li><a href="/">check Out </a></li>
+                 <li><a href="/">Guests</a></li>
+               </ul>
+            </div>
+            <div class="boxs">
+                <p>Maldives</p>
+                <input type="date" >
+                <input type="date">
+                <p>4Guit</p>
+                <button>🔎  Search Trip</button>
+            </div>
+        </article>
+    </section>
+</body>
+<style>
+    body{
+        background-image: url("wallhaven-182297-wallpaper-preview.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h2{
+        color: blue;
+    }
+    span{
+        color: white;
+    }
+     #nav ul{
+        list-style: none;
+       display: flex;
+        justify-content: center;
+       gap: 50px;
+    }
+       #nav a:hover{
+        color: brown;
+        font-size: 20px;
+    }
+     #nav{
+       display: flex;
+      align-items: center;
+       margin:20px 20px 20px 100px ;
+    }
+    a{
+       text-decoration: none;
+       color: white;
+    }
+     .search{
+        margin-left:140px ;
+         display: flex;
+        justify-content: flex-end;
+        justify-content: space-around;
+    }
+    .search button{
+        color: white;
+        background-color: rgb(87, 87, 187);
+        border-radius: 10px;
+    }
+      .search button{
+        justify-content: flex-end;
+    }
+    header ul{
+        margin-left: 40px;
+    }
+    article{
+        background-color: rgba(255, 255, 255 , 0.6);
+        border-radius: 10px;
+        width: 600px;
+         margin-top: -35px;
+        margin-left: 100px;
+        justify-content: center;
+        border: 1px solid rgba(87, 80, 80, 0.7);
+        padding: 10px;
+        align-items: center;
+    }
+    
+    article p.explore{
+        margin-top: 40px;
+        border-radius: 10px;
+        background-color: rgb(173, 159, 159);
+        opacity: 0.5;
+        width: 200px;
+        color: white;
+    }
+    #white{
+        color: white;
+        font-size:80px;
+        justify-content: center;
+    }
+     #blue{
+        color: blue;
+        font-size:80px;
+    }
+    .blanc{
+        color: white;
+    }
+    .btns button{
+        border-radius: 100px;
+    }
+    .btns .btn1{
+         background-color: blue;
+    }
+    .btns .btn2{
+         background-color: gray;
+         margin-left: 20px;
+    }
+   .sect ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+   }
+       .nav a:hover{
+        color: brown;
+        font-size: 20px;
+    }
+   .boxs{
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-left: 30px;
+   }
+   .boxs button{
+     border-radius: 100px;
+     padding: 10px;
+     background-color: blue;
+     color: white;
+   }
+   .sect{
+    display: flex;
+    gap: 56px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+   }
+</style>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Calculator</h2>
+
+    <input type="text" id="input">
+
+    <br><br>
+
+    <button onclick="ajouter('7')">7</button>
+    <button onclick="ajouter('8')">8</button>
+    <button onclick="ajouter('9')">9</button>
+    
+    <br>
+
+    <button onclick="ajouter('4')">4</button>
+    <button onclick="ajouter('5')">5</button>
+    <button onclick="ajouter('6')">6</button>
+   
+    
+    <br>
+
+    <button onclick="ajouter('1')">1</button>
+    <button onclick="ajouter('2')">2</button>
+    <button onclick="ajouter('3')">3</button>
+    
+    <!-- <button onclick="retour()" class="d">↶</button> -->
+    
+    <br>
+    
+    <button onclick="ajouter('/')">/</button>
+     <button onclick="vider()" class="c">C</button>
+    <button onclick="ajouter('0')">0</button>
+    <button onclick="ajouter(',')">,</button>
+  
+    
+    <br>
+
+    <div class="btns">
+        <button onclick="ajouter('+')">+</button>
+        <button onclick="ajouter('-')">-</button>
+          <button onclick="calculer('=')" class="EQ">=</button>
+        <button onclick="ajouter('❌')">❌</button>
+        <button onclick="vider()">%</button>
+    </div>
+    <br>
+
+
+    <script>
+
+        function ajouter(val){
+            document.getElementById("input").value += val;
+        }
+
+        function calculer(){
+            let res = document.getElementById("input").value;
+            document.getElementById("input").value = eval(res);
+        }
+
+        function retour(){
+            document.getElementById("input");
+            input.value = input.value.slice(0,-1);
+        }
+
+        function vider(){
+            document.getElementById("input").value = '';
+        }
+
+    </script>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background: #f3f5ff;
+
+            font-family: Arial, sans-serif;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 90px);
+
+            gap: 8px;
+
+            justify-content: center;
+
+            align-content: center;
+        }
+
+
+        h2 {
+            grid-column: 1 / 5;
+
+            text-align: center;
+
+            font-size: 45px;
+
+            color: #252b68;
+
+            margin: 0 0 10px 0;
+        }
+
+
+        input {
+            grid-column: 1 / 5;
+
+            width: 100%;
+
+            height: 60px;
+
+            padding: 10px;
+
+            font-size: 25px;
+
+            text-align: right;
+
+            border: 1px solid #d5dcf5;
+
+            border-radius: 12px;
+
+            background: white;
+
+            outline: none;
+        }
+
+
+        br {
+            display: none;
+        }
+
+
+        .btns {
+            display: contents;
+        }
+
+
+        button {
+            width: 90px;
+
+            height: 65px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            box-shadow: 0 3px 8px #ddd;
+        }
+
+
+        button:hover {
+            background: #eef1ff;
+        }
+
+
+        /* C */
+
+        .c {
+            background: #32c77a;
+
+            color: white;
+        }
+
+
+        /* = */
+
+        .EQ {
+            background: #3988ee;
+
+            color: white;
+
+            grid-row: span 2;
+
+            height: 138px;
+        }
+
+    </style>
+
+</body>
+</html>
